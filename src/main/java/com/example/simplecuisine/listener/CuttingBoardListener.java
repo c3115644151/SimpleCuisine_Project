@@ -36,6 +36,9 @@ public class CuttingBoardListener implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEvent event) {
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
+        // Shift-Click bypass
+        if (event.getPlayer().isSneaking()) return;
+        
         if (event.getClickedBlock() == null) return;
 
         // Lazy Registration (Self-Healing)

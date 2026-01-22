@@ -46,6 +46,9 @@ public class StoveListener implements Listener {
     public void onInteract(PlayerInteractEvent event) {
         if (event.getAction() != org.bukkit.event.block.Action.RIGHT_CLICK_BLOCK) return;
         
+        // Shift-Click bypass (allow placing blocks against stove)
+        if (event.getPlayer().isSneaking()) return;
+        
         // Allow usage of Flint & Steel, Bucket, Water Bucket, Shovel (State changing items)
         // Do this BEFORE checking for stove to allow interaction to pass through to IA/Vanilla
         if (event.getItem() != null) {

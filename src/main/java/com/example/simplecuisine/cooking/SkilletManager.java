@@ -323,6 +323,7 @@ public class SkilletManager {
                         // toPlace.setAmount(1); // REMOVED: Allow stacking
                         
                         skillet.setItem(toPlace, recipe.getCookingTime());
+                        skillet.setCooking(true); // Fix: Explicitly set cooking to true
                         itemInHand.setAmount(0); // Consume all
                         
                         updateVisual(skillet);

@@ -671,8 +671,8 @@ public class RecipeMenuManager implements Listener {
         ItemMeta meta = item.getItemMeta();
         if (meta != null) {
             List<Component> lore = meta.hasLore() ? meta.lore() : new ArrayList<>();
-            lore.add(ConfigManager.getGuiText("pot.ingredients_label").append(getIngredientName(recipe.getInput(), player)));
-            lore.add(ConfigManager.getGuiText("pot.click_detail"));
+            lore.add(ConfigManager.getGuiText("board.ingredients_label").append(getIngredientName(recipe.getInput(), player)));
+            lore.add(ConfigManager.getGuiText("common.click_for_detail"));
             meta.lore(lore);
             item.setItemMeta(meta);
         }

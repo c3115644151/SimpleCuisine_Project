@@ -148,6 +148,9 @@ public class CookingPotListener implements Listener {
         if (event.getHand() != org.bukkit.inventory.EquipmentSlot.HAND) return;
 
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            // Shift-Click bypass (allow placing blocks against pot)
+            if (event.getPlayer().isSneaking()) return;
+
             Block block = event.getClickedBlock();
             if (block != null) {
                 // Prevent immediate interaction after placement (double-fire fix)

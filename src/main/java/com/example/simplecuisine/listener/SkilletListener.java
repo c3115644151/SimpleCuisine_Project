@@ -68,6 +68,9 @@ public class SkilletListener implements Listener {
             if (event.getAction() == org.bukkit.event.block.Action.RIGHT_CLICK_BLOCK) {
                 if (plugin.getSkilletManager().isSkillet(event.getClickedBlock().getLocation())) {
                     
+                    // Shift-Click bypass
+                    if (event.getPlayer().isSneaking()) return;
+                    
                     // Debounce check
                     if (!com.example.simplecuisine.util.InteractionDebouncer.canInteract(event.getPlayer().getUniqueId())) {
                         event.setCancelled(true);
