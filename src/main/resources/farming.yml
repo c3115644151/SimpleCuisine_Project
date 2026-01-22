@@ -1,0 +1,53 @@
+farming:
+  mechanics:
+    growth_check_interval: 5
+    base_growth_chance: 0.00366
+  
+  crops:
+    farmersdelight:rice:
+      type: DOUBLE_HEIGHT_WATER_CROP
+      light_requirement: 9
+      # 生长阶段配置
+      # 你可以在这里定义任意阶段。插件将从 0 推进到所定义的最高阶段。
+      # 格式：
+      # <stage_index>:
+      #   lower: { <property>: <value>, ... }
+      #   upper: { <property>: <value>, ... }（可选，如果定义了，将设置上方方块）
+      growth_stages:
+    0:
+      lower: { crop_stage: 0, half: 0 }
+    1:
+      lower: { crop_stage: 1, half: 0 }
+    2:
+      lower: { crop_stage: 2, half: 0 }
+    3:
+      lower: { crop_stage: 3, half: 0 }
+    4:
+      lower: { crop_stage: 4, half: 0 }
+    5:
+      lower: { crop_stage: 4, half: 0 }
+      upper: { crop_stage: 0, half: 1 }
+    6:
+      lower: { crop_stage: 4, half: 0 }
+      upper: { crop_stage: 1, half: 1 }
+    7:
+      lower: { crop_stage: 4, half: 0 }
+      upper: { crop_stage: 2, half: 1 }
+    8:
+      lower: { crop_stage: 4, half: 0 }
+      upper: { crop_stage: 3, half: 1 }
+      
+      # 仅在不使用 growth_stages 时才生效，用于指定作物最大生长阶段及开始变为双格高的阶段
+      max_stage: 8
+      double_height_stage: 5
+      
+      drop_mature:
+        item: "farmersdelight:rice_panicle"
+        min: 2
+        max: 4
+      drop_seed: "farmersdelight:rice"
+      extra_drop:
+        tool_keyword: "knife"
+        item: "farmersdelight:straw"
+        chance: 1.0
+      particles: "HAPPY_VILLAGER"

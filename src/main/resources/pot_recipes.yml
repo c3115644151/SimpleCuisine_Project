@@ -1,0 +1,270 @@
+# SimpleCuisine 配方配置文件
+# 
+# 配置格式说明:
+# recipes:
+#   unique_key:              # 配方的唯一标识符 (例如: tomato_soup)
+#     result: MATERIAL_NAME  # 产出物的材质名称 (例如: BEETROOT_SOUP)
+#     custom_model_data: 0   # [可选] 自定义模型数据，用于兼容材质包或 CraftEngine 物品
+#     experience: 0.0        # [可选] 烹饪完成后给予玩家的经验值 (整数)
+#     time: 200              # [可选] 烹饪时间，单位为 tick (20 ticks = 1秒)，默认为 200
+#     container: MATERIAL_NAME # [可选] 盛装容器 (例如: BOWL)，若设置，产物会先进入缓冲槽
+#     ingredients:           # 配方所需的材料列表
+#       MATERIAL_NAME: AMOUNT # 材料名称: 数量
+
+recipes:
+  hot_cocoa:
+    display_name: "热可可"
+    result: farmersdelight:hot_cocoa
+    container: GLASS_BOTTLE
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:milk_bottle": 1
+      "minecraft:sugar": 1
+      "minecraft:cocoa_beans": 1
+
+  apple_cider:
+    display_name: "苹果酒"
+    result: farmersdelight:apple_cider
+    container: GLASS_BOTTLE
+    time: 100
+    experience: 1
+    ingredients:
+      "minecraft:apple": 2
+      "minecraft:sugar": 1
+
+  tomato_sauce:
+    display_name: "番茄酱"
+    result: farmersdelight:tomato_sauce
+    container: BOWL
+    time: 100
+    experience: 2
+    ingredients:
+      "farmersdelight:tomato": 2
+
+  cooked_rice:
+    display_name: "米饭"
+    result: farmersdelight:cooked_rice
+    container: BOWL
+    time: 100
+    experience: 0.35
+    ingredients:
+      "farmersdelight:rice": 1
+
+  glow_berry_custard:
+    display_name: "发光浆果蛋奶沙司"
+    result: farmersdelight:glow_berry_custard
+    container: GLASS_BOTTLE
+    time: 100
+    experience: 1
+    ingredients:
+      "minecraft:glow_berries": 1
+      "minecraft:milk_bucket": 1
+      "#minecraft:eggs": 1
+      "minecraft:sugar": 1
+
+  dumplings:
+    display_name: "饺子"
+    result: farmersdelight:dumplings
+    container: PAPER
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:wheat_dough": 1
+      "#farmersdelight:leafs": 1
+      "farmersdelight:onion": 1
+      "#minecraft:meat": 1
+
+  cabbage_rolls:
+    display_name: "卷心菜卷"
+    result: farmersdelight:cabbage_rolls
+    time: 100
+    experience: 0.35
+    ingredients:
+      "farmersdelight:cabbage": 1
+      "#minecraft:meat": 1
+
+  bone_broth:
+    display_name: "大骨汤"
+    result: farmersdelight:bone_broth
+    time: 100
+    experience: 0.35
+    ingredients:
+      "minecraft:bone": 1
+      "#minecraft:fox_food": 1
+
+  beef_stew:
+    display_name: "牛肉炖"
+    result: farmersdelight:beef_stew
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:minced_beef": 1
+      "minecraft:carrot": 1
+      "minecraft:potato": 1
+
+  chicken_soup:
+    display_name: "鸡肉汤"
+    result: farmersdelight:chicken_soup
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:chicken_cuts": 1
+      "minecraft:carrot": 1
+      "farmersdelight:cabbage": 1
+      "minecraft:potato": 1
+
+  vegetable_soup:
+    display_name: "蔬菜汤"
+    result: farmersdelight:vegetable_soup
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "minecraft:carrot": 1
+      "minecraft:potato": 1
+      "minecraft:beetroot": 1
+      "farmersdelight:cabbage": 1
+
+  fish_stew:
+    display_name: "鱼肉炖"
+    result: farmersdelight:fish_stew
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "minecraft:cod": 1
+      "farmersdelight:tomato_sauce": 1
+      "farmersdelight:onion": 1
+
+  pumpkin_soup:
+    display_name: "南瓜汤"
+    result: farmersdelight:pumpkin_soup
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:pumpkin_slice": 1
+      "farmersdelight:cabbage": 1
+      "minecraft:porkchop": 1
+      "farmersdelight:milk_bottle": 1
+
+  fried_rice:
+    display_name: "炒饭"
+    result: farmersdelight:fried_rice
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:rice": 1
+      "#minecraft:eggs": 1
+      "minecraft:carrot": 1
+      "farmersdelight:onion": 1
+
+  baked_cod_stew:
+   display_name: "烘培鳕鱼炖"
+   result: farmersdelight:baked_cod_stew
+   container: BOWL
+   time: 100
+   experience: 1
+   ingredients:
+     "minecraft:cod": 1
+     "minecraft:potato": 1
+     "#minecraft:eggs": 1
+     "farmersdelight:tomato": 1
+
+  noodle_soup:
+    display_name: "面条汤"
+    result: farmersdelight:noodle_soup
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:raw_pasta": 1
+      "farmersdelight:fried_egg": 1
+      "minecraft:dried_kelp": 1
+      "minecraft:porkchop": 1
+
+  mushroom_rice:
+    display_name: "蘑菇饭"
+    result: farmersdelight:mushroom_rice
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:rice": 1
+      "minecraft:potato": 1
+      "minecraft:brown_mushroom": 1
+      "minecraft:red_mushroom": 1
+
+  pasta_with_meatballs:
+    display_name: "肉丸意面"
+    result: farmersdelight:pasta_with_meatballs
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:minced_beef": 1
+      "farmersdelight:raw_pasta": 1
+      "farmersdelight:tomato_sauce": 1
+
+  pasta_with_mutton_chop:
+    display_name: "羊排意面"
+    result: farmersdelight:pasta_with_mutton_chop
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:mutton_chops": 1
+      "farmersdelight:raw_pasta": 1
+      "farmersdelight:tomato_sauce": 1
+
+  squid_ink_pasta:
+    display_name: "鱿鱼墨面"
+    result: farmersdelight:squid_ink_pasta
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:raw_pasta": 1
+      "minecraft:salmon": 1
+      "minecraft:ink_sac": 1
+      "farmersdelight:tomato": 1
+
+  vegetable_noodles:
+    display_name: "蔬菜面"
+    result: farmersdelight:vegetable_noodles
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:raw_pasta": 1
+      "minecraft:carrot": 1
+      "minecraft:brown_mushroom": 1
+      "farmersdelight:cabbage": 1
+      "minecraft:potato": 1
+
+  ratatouille:
+    display_name: "蔬菜杂烩"
+    result: farmersdelight:ratatouille
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "farmersdelight:tomato": 1
+      "farmersdelight:onion": 1
+      "minecraft:beetroot": 1
+      "minecraft:potato": 1
+
+  dog_food:
+    display_name: "狗粮"
+    result: farmersdelight:dog_food
+    container: BOWL
+    time: 100
+    experience: 1
+    ingredients:
+      "minecraft:rotten_flesh": 1
+      "minecraft:bone_meal": 1
+      "minecraft:porkchop": 1

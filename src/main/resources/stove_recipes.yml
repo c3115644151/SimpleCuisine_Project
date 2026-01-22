@@ -1,0 +1,72 @@
+# 定义可以在灶炉上烹饪的物品。
+# 支持原版物品和自定义物品（ItemsAdder 等）。
+#
+# 格式:
+# recipes:
+#   unique_id:
+#     input: <namespace:id> 或 <MATERIAL_NAME>
+#     result: <namespace:id> 或 <MATERIAL_NAME>
+#     time: <ticks> (20 ticks = 1秒)
+#     experience: <amount> (可选, 默认 0)
+
+recipes:
+  # --- 原版肉类 ---
+  beef:
+    input: BEEF
+    result: COOKED_BEEF
+    time: 600
+  porkchop:
+    input: PORKCHOP
+    result: COOKED_PORKCHOP
+    time: 600
+  chicken:
+    input: CHICKEN
+    result: COOKED_CHICKEN
+    time: 600
+  mutton:
+    input: MUTTON
+    result: COOKED_MUTTON
+    time: 600
+  rabbit:
+    input: RABBIT
+    result: COOKED_RABBIT
+    time: 600
+  cod:
+    input: COD
+    result: COOKED_COD
+    time: 600
+  salmon:
+    input: SALMON
+    result: COOKED_SALMON
+    time: 600
+  potato:
+    input: POTATO
+    result: BAKED_POTATO
+    time: 600
+    
+  # --- FarmersDelight / 自定义示例 ---
+  # 仅当您的服务器/资源包中存在这些物品时，以下配置才会生效
+  # tomato_slice:
+  #   input: farmersdelight:tomato_slice
+  #   result: farmersdelight:roasted_tomato_slice
+  #   time: 400
+  beef_patty:
+    input: farmersdelight:minced_beef
+    result: farmersdelight:beef_patty
+    time: 300
+  cooked_bacon:
+    input: farmersdelight:bacon
+    result: farmersdelight:cooked_bacon
+    time: 300
+  cooked_mutton_chops:
+    input: farmersdelight:mutton_chops
+    result: farmersdelight:cooked_mutton_chops
+    time: 300
+  cooked_cod_slice:
+    input: farmersdelight:cod_slice
+    result: farmersdelight:cooked_cod_slice
+    time: 300
+  cooked_salmon_slice:
+    input: farmersdelight:salmon_slice
+    result: farmersdelight:cooked_salmon_slice
+    time: 300

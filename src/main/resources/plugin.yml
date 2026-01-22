@@ -1,0 +1,16 @@
+name: SimpleCuisine
+version: 1.0-SNAPSHOT
+main: com.example.simplecuisine.SimpleCuisine
+api-version: 1.21
+authors: [cy311]
+description: A simplified cooking plugin with GUI interaction and heat detection.
+softdepend: [ItemsAdder, CraftEngine, PlaceholderAPI]
+commands:
+  simplecuisine:
+    description: Main command for SimpleCuisine
+    aliases: [sc]
+    usage: /<command> [givepot|reload|diagnose]
+permissions:
+  simplecuisine.admin:
+    description: Allows access to all SimpleCuisine admin commands
+    default: op

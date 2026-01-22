@@ -1,0 +1,267 @@
+# 调试模式
+debug: true
+
+# 插件模式: itemsadder, craftengine 或 vanilla
+# itemsadder: 优先使用 ItemsAdder 物品。
+# craftengine: 优先使用 CraftEngine 物品。
+# vanilla: 仅使用下方定义的配置生成原生 ItemStack。
+# 注意: 如果首选插件不可用，插件将尝试按 ItemsAdder -> CraftEngine -> Vanilla 的顺序自动回退。
+mode: craftengine
+
+# 通用机制配置
+mechanics:
+  # 食用食物后是否返还容器
+  # 设为 true: SimpleCuisine 会尝试返还容器（如碗、瓶子）。
+  # 设为 false: 如果您使用 CraftEngine 或其他插件处理此逻辑，请关闭此项以避免冲突（如收到两个碗）。
+  return_container: false
+
+# 刀具与掉落机制配置
+knife_mechanics:
+  # 草掉落配置
+  grass_drop:
+    enabled: true
+    chance: 0.25
+    item: "farmersdelight:straw"
+    # 目标方块列表 (支持 Material 枚举名和 #tag 标签)
+    target_blocks:
+      - "#minecraft:replaceable_plants"
+      - SHORT_GRASS
+      - GRASS
+      - TALL_GRASS
+      - FERN
+      - LARGE_FERN
+  
+  # 生物掉落配置
+  mob_drops:
+    pig:
+      enabled: true
+      # 掉落数量范围 (min - max)
+      min_amount: 1
+      max_amount: 1
+      # 抢夺附魔加成: 每级抢夺增加的最大掉落数量
+      # 最终数量 = random(min, max + (lootingLevel * bonus))
+      looting_bonus_max: 1
+      item: "farmersdelight:ham"
+    hoglin:
+      enabled: true
+      min_amount: 1
+      max_amount: 2
+      looting_bonus_max: 1
+      item: "farmersdelight:ham"
+
+# ItemsAdder 集成配置
+itemsadder:
+  namespace: simplecuisine
+  # 烹饪锅物品 ID (在 IA 配置中定义的 ID)
+  cooking_pot_id: cooking_pot
+
+# CraftEngine 集成配置
+craftengine:
+  # 烹饪锅物品 ID
+  cooking_pot_id: farmersdelight:cooking_pot
+
+# 烹饪锅配置 (Fallback / Vanilla 模式)
+# 注意：当检测到 ItemsAdder 或 CraftEngine 并成功加载物品时，item 配置将被忽略
+# 此时物品的模型、材质、名称等完全由对应插件的配置决定。
+cooking_pot:
+  # 热源
+  heat_sources:
+    vanilla:
+      - CAMPFIRE
+      - SOUL_CAMPFIRE
+      - LAVA
+      - MAGMA_BLOCK
+      - FIRE
+      - SOUL_FIRE
+    # ItemsAdder 方块 ID
+    itemsadder:
+      - simplecuisine:stove
+      - simplecuisine:stove_on
+    # CraftEngine 方块 ID
+    # 支持可选的属性检查，格式: "namespace:id[property=value]"
+    craftengine:
+      - farmersdelight:stove[fire=true]
+
+  # 物品配置 (仅在 mode: vanilla 时或作为 fallback 使用)
+  item:
+    material: CAULDRON
+    name: "&e烹饪锅"
+    lore:
+      - "&7放置在热源上方以开始烹饪！"
+    custom_model_data: 0
+
+  # GUI 界面配置
+  gui:
+    # 界面标题
+    # <offset> 和 <icon> 标签会根据 layout 配置自动解析
+    title: "<white><offset><icon>"
+    
+    # 布局配置
+    layout:
+      itemsadder:
+        # IA 使用内置标签控制偏移
+        offset: ":offset_-6:"
+        icon: ":simplecuisine:cooking_pot_gui:"
+      craftengine:
+        # CE 使用 <shift:N> 标签控制偏移
+        offset: "<shift:-8>" 
+        # CE 使用 <image:namespace:id> 标签显示图片
+        icon: "<image:farmersdelight:cooking_pot_gui>"
+      vanilla:
+    
+    # 是否使用染色玻璃板填充空白格子
+    # 通常使用自定义纹理时不需要填充
+    use_fillers: false
+    # 填充物配置
+    filler:
+      # 物品ID (支持 ItemsAdder/CraftEngine ID，例如 simplecuisine:filler)
+      # 如果未找到或为空，将使用下方的 material 配置
+      item: ""
+      material: LIGHT_GRAY_STAINED_GLASS_PANE
+      model_data: 0
+      
+    # 进度条配置
+    progress_bar:
+      enabled: true
+      slot: 5
+      # 进度动画帧列表
+      # 从 0% 到 100% 对应的图标
+      items:
+        - farmersdelight:0
+        - farmersdelight:1
+        - farmersdelight:2
+        - farmersdelight:3
+        - farmersdelight:4
+        - farmersdelight:5
+        - farmersdelight:6
+        - farmersdelight:7
+        - farmersdelight:8
+        - farmersdelight:9
+        - farmersdelight:10
+        - farmersdelight:11
+        - farmersdelight:12
+        - farmersdelight:13
+        - farmersdelight:14
+        - farmersdelight:15
+        - farmersdelight:16
+        - farmersdelight:17
+        - farmersdelight:18
+        - farmersdelight:19
+        - farmersdelight:20
+      
+      # [Vanilla 模式备用]
+      material: PAPER
+      models: [] 
+
+    # 热源指示器配置
+    heat_indicator:
+      enabled: true
+      slot: 20
+      # ItemsAdder 物品 ID
+      item_on: farmersdelight:cooking_pot_heated
+      item_off: farmersdelight:cooking_pot_not_heated
+      
+      # [Vanilla 模式备用]
+      material: PAPER
+      model_on: 0
+      model_off: 0
+
+# 砧板配置
+cutting_board:
+  # 可视化配置
+  visual:
+    # 物品显示的垂直偏移量
+    offset_y: 0.07
+    # 物品显示的缩放比例 (针对普通物品)
+    scale: 0.5
+    # 方块显示的缩放比例 (针对方块类型物品)
+    block_scale: 0.25
+    # 物品显示的 X 轴旋转角度 (度)
+    rotation_x: 90.0
+  # 允许作为刀使用的物品列表 (ItemsAdder ID 或 CraftEngine ID)
+  allowed_knives:
+    - farmersdelight:flint_knife
+    - farmersdelight:iron_knife
+    - farmersdelight:golden_knife
+    - farmersdelight:diamond_knife
+    - farmersdelight:netherite_knife
+  item:
+    material: OAK_PRESSURE_PLATE
+    name: "&e砧板"
+    lore:
+      - "&7用于处理食材"
+    custom_model_data: 0
+
+# 煎锅配置
+skillet:
+  item:
+    material: IRON_TRAPDOOR
+    name: "&e煎锅"
+    lore:
+      - "&7放置在热源上方以煎烤食物！"
+    custom_model_data: 0
+
+# =================================================================
+# 菜谱菜单 GUI 配置 (CraftEngine/ItemsAdder)
+# =================================================================
+recipe_menu:
+  level_1:
+    title: "<white><offset><icon><shift:-1600>菜谱列表"
+    layout:
+      craftengine:
+        offset: "<shift:-7>"
+        icon: "<image:farmersdelight:recipelist>"
+  level_2_pot:
+    title: "<white><offset><icon><shift:-1600>配方详情"
+    layout:
+      craftengine:
+        offset: "<shift:-8>"
+        icon: "<image:farmersdelight:cooking_pot_menu>"
+  level_2_board:
+    title: "<white><offset><icon><shift:-1600>配方详情"
+    layout:
+      craftengine:
+        offset: "<shift:-8>"
+        icon: "<image:farmersdelight:cutting_board_menu>"
+
+# GUI 资源映射 (自定义贴图配置)
+# 直接映射材质与 CustomModelData，无需依赖本地 ItemsAdder/CraftEngine 配置
+# 用于引用线上资源包中的贴图
+gui_assets:
+  # 上一页按钮
+  previous_page:
+    material: PAPER
+    custom_model_data: 10007
+    name: "&e上一页"
+  
+  # 下一页按钮
+  next_page:
+    material: PAPER
+    custom_model_data: 10008
+    name: "&e下一页"
+  
+  # 返回按钮
+  back_button:
+    material: PAPER
+    custom_model_data: 10007
+    name: "&e返回上一级"
+  
+  # 烹饪时间图标
+  cooking_time:
+    material: PAPER
+    custom_model_data: 20001
+    name: "&b烹饪时间"
+
+  # 查看食谱组件 (通常是书本图标)
+  recipe_view:
+    material: PAPER
+    custom_model_data: 10010
+    name: "<yellow>查看配方" 
+
+# =================================================================
+# 自定义物品映射 (用于配方)
+# =================================================================
+mappings:
+  # LIGNITE:
+  #   material: COAL
+  #   custom_model_data: 10001

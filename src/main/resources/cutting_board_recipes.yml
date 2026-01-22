@@ -1,0 +1,141 @@
+recipes:
+  rice:
+    input: "farmersdelight:rice_panicle"
+    tool: "knife"
+    results:
+      - "farmersdelight:rice:1"
+      - "farmersdelight:straw:1"
+    sound: "item.axe.strip"
+  raw_pasta:
+    input: "farmersdelight:wheat_dough"
+    tool: "knife"
+    result: "farmersdelight:raw_pasta"
+    amount: 1
+  cabbage_to_leaf:
+    input: "farmersdelight:cabbage"
+    tool: "knife"
+    result: "farmersdelight:cabbage_leaf"
+    amount: 2
+    sound: "item.axe.strip"
+  pumpkin_to_slice:
+    input: "minecraft:pumpkin"
+    tool: "knife"
+    result: "farmersdelight:pumpkin_slice"
+    amount: 4
+    sound: "item.axe.strip"
+  melon_to_slice:
+    input: "minecraft:melon"
+    tool: "knife"
+    result: "minecraft:melon_slice"
+    amount: 9
+    sound: "item.axe.strip"
+  beef_to_minced:
+    input: "minecraft:beef"
+    tool: "knife"
+    result: "farmersdelight:minced_beef"
+    amount: 2
+    sound: "item.axe.strip"
+  porkchop_to_bacon:
+    input: "minecraft:porkchop"
+    tool: "knife"
+    result: "farmersdelight:bacon"
+    amount: 2
+    sound: "item.axe.strip"
+  mutton_to_chops:
+    input: "minecraft:mutton"
+    tool: "knife"
+    result: "farmersdelight:mutton_chops"
+    amount: 2
+    sound: "item.axe.strip"
+  cooked_mutton_to_chops:
+    input: "minecraft:cooked_mutton"
+    tool: "knife"
+    result: "farmersdelight:cooked_mutton_chops"
+    amount: 2
+    sound: "item.axe.strip"
+  chicken_to_cuts:
+    input: "minecraft:chicken"
+    tool: "knife"
+    results:
+      - "farmersdelight:chicken_cuts:2"
+      - "minecraft:bone_meal:1"
+    sound: "item.axe.strip"
+  cooked_chicken_to_cuts:
+    input: "minecraft:cooked_chicken"
+    tool: "knife"
+    results:
+      - "farmersdelight:cooked_chicken_cuts:2"
+      - "minecraft:bone_meal:1"
+    sound: "item.axe.strip"
+  cod_to_slice:
+    input: "minecraft:cod"
+    tool: "knife"
+    results:
+      - "farmersdelight:cod_slice:2"
+      - "minecraft:bone_meal:1"
+    sound: "item.axe.strip"
+  cooked_cod_to_slice:
+    input: "minecraft:cooked_cod"
+    tool: "knife"
+    results:
+      - "farmersdelight:cooked_cod_slice:2"
+      - "minecraft:bone_meal:1"
+    sound: "item.axe.strip"
+  salmon_to_slice:
+    input: "minecraft:salmon"
+    tool: "knife"
+    results:
+      - "farmersdelight:salmon_slice:2"
+      - "minecraft:bone_meal:1"
+    sound: "item.axe.strip"
+  cooked_salmon_to_slice:
+    input: "minecraft:salmon"
+    tool: "knife"
+    results:
+      - "farmersdelight:cooked_salmon_slice:2"
+      - "minecraft:bone_meal:1"
+    sound: "item.axe.strip"
+  ham_to_porkchop:
+    input: "farmersdelight:ham"
+    tool: "knife"
+    results:
+      - "minecraft:porkchop:2"
+      - "minecraft:bone:1"
+    sound: "item.axe.strip"
+  smoked_ham_to_cooked_porkchop:
+    input: "farmersdelight:smoked_ham"
+    tool: "knife"
+    results:
+      - "minecraft:cooked_porkchop:2"
+      - "minecraft:bone:1"
+    sound: "item.axe.strip"
+  cake_to_slice:
+    input: "minecraft:cake"
+    tool: "knife"
+    result: "farmersdelight:cake_slice"
+    amount: 7
+    sound: "item.axe.strip"
+  apple_pie_slice:
+    input: "farmersdelight:apple_pie"
+    tool: "knife"
+    result: "farmersdelight:apple_pie_slice"
+    amount: 4
+    sound: "item.axe.strip"
+  sweet_berry_cheesecake_slice:
+    input: "farmersdelight:sweet_berry_cheesecake"
+    tool: "knife"
+    reslut: "farmersdelight:sweet_berry_cheesecake_slice"
+    amount: 4
+    sound: "item.axe.strip"
+  chocolate_pie_slice:
+    input: "farmersdelight:chocolate_pie"
+    tool: "knife"
+    result: "farmersdelight:chocolate_pie_slice"
+    amount: 4
+    sound: "item.axe.strip"
+  kelp_roll_to_slice:
+    input: "farmersdelight:kelp_roll"
+    tool: "knife"
+    result: "farmersdelight:kelp_roll_slice"
+    amount: 3
+    sound: "item.axe.strip"
